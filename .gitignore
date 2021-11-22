@@ -1,0 +1,6 @@
+*.pyc
+db.sqlite3
+.env
+prod_settings.py
+db.json
+dump

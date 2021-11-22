@@ -1,0 +1,12 @@
+.navbar{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+input.form-control{
+    border-radius: 50rem;
+    border-top-right-radius:0;
+    border-bottom-right-radius:0;
+}
+
+
