@@ -4,3 +4,6 @@ db.sqlite3
 prod_settings.py
 db.json
 dump
+local_settings.py
+static
+migrations
