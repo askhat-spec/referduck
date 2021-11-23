@@ -6,10 +6,10 @@
       {% if page_obj.has_previous %}
         
       <li class="page-item">
-        <a class="page-link" href="?page=1">&laquo;</a>
+        <a class="page-link" href="?{{ q }}page=1">&laquo;</a>
       </li>
       <li class="page-item">
-        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&#8249</a>
+        <a class="page-link" href="?{{ q }}page={{ page_obj.previous_page_number }}">&#8249</a>
       </li>
         {% if page_obj.number|add:'-2' >= 2 %}
         <li class="page-item"> 
@@ -25,7 +25,7 @@
           </li>
           {% elif i > page_obj.number|add:'-3' and i < page_obj.number|add:'3' %}
           <li class="page-item">
-            <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+            <a class="page-link" href="?{{ q }}page={{ i }}">{{ i }}</a>
           </li>
         {% endif %}
       {% endfor %}
@@ -37,10 +37,10 @@
             </li>
         {% endif %}
       <li class="page-item">
-        <a class="page-link" href="?page={{ page_obj.next_page_number }}">&#8250;</a>
+        <a class="page-link" href="?{{ q }}page={{ page_obj.next_page_number }}">&#8250;</a>
       </li>
       <li class="page-item">
-        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a>
+        <a class="page-link" href="?{{ q }}page={{ page_obj.paginator.num_pages }}">&raquo;</a>
       </li>
       {% endif %}
 
