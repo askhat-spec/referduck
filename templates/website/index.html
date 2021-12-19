@@ -22,9 +22,9 @@
                 </div>
                 <div class="row">
                     {% for category in object_list %}
-                    <div class="col-lg-4 col-md-6">
+                    <div class="pt-1 col-lg-4 col-md-6" align="justify">
                         <a href="{{ category.get_absolute_url }}">
-                            <h5>{{ category.name }}</h5>
+                            <h6>{{ category.name }}</h6>
                         </a>
                     </div>
                     {% endfor %}

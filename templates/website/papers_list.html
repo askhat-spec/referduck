@@ -3,7 +3,7 @@
 {% block title %}  Жұмыстар тізімі {% endblock title %}
 {% block content %}
 <section class="p-4 p-lg-5">
-    <div class="container ">
+    <div class="p-5 container">
     {% for paper in object_list %}
         <ul class="list-unstyled">
             <a href="{{ paper.get_absolute_url }}">
@@ -13,7 +13,5 @@
     {% endfor %}
     </div>
 </section>
-<br/><br/>
 {% include 'includes/pagination.html' %}
-<br/><br/>
 {% endblock content %}

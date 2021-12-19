@@ -8,9 +8,14 @@
         {{ paper.title }}
     </h4>
     <hr>
-    <p>
-        {{ paper.content|safe }}
-    </p>
+        <div class="Content" align="justify">
+            {% for content in object_list %}
+                {{content|safe}}
+            {% endfor %}
+        </div>
+        {% if is_paginated %}
+            {% include "includes/pagination.html" %}
+        {% endif %}
 </div>
 
 {% endblock content %}
