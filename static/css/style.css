@@ -17,3 +17,31 @@ p{
     margin-bottom: 2px;
 }
 
+.loader {
+    position: fixed;
+    z-index: 20000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #d9e3f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.loader > img {
+width: 100px;
+}
+
+.loader.hidden {
+animation: fadeOut 0.25s;
+animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+  }

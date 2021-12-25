@@ -4,6 +4,9 @@
 {% block content %}
 <section class="p-4 p-lg-5">
     <div class="container ">
+        <h3 class="font-weight-bold"> 
+            Іздеу нәтижесі:
+        </h3>
     {% for paper in object_list %}
         <ul class="list-unstyled">
             <a href="{{ paper.get_absolute_url }}">
