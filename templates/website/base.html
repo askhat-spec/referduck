@@ -8,13 +8,14 @@
             {% block title %}{% endblock title %}
         </title>
         <link rel="icon" type="image/x-icon" href="{% static "assets/document.png" %}">
-        <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+        <!-- <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}"> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static "css/style.css" %}">
     </head>
     <body>
         <!-- Loader -->
         <div class="loader">
-            <img src="{% static 'assets/loading.gif' %}" alt="Loading..." />
+            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
         </div>
 
         <!-- Navbar-->
@@ -28,7 +29,7 @@
                     <input class="form-control" type="search" placeholder="Іздеу..." size="50px" name="q">
                     <div class="btn-group" role="group">
                         <button class="btn btn-secondary" hidden="true"></button>
-                        <button class="btn btn-secondary" type="submit"><img src="{% static "assets/search.svg" %}" width="26px" height="auto" alt=""></button>
+                        <button class="btn btn-secondary" type="submit"><img src="{% static "assets/search.svg" %}" width="24px" height="auto" alt=""></button>
                     </div>
                 </form>
               </div>  
@@ -43,7 +44,7 @@
             <div class="container">
                 <!-- <p class="m-0 p-3 text-center">site is under construction</p>
                 <img src="{% static 'assets/coder.gif' %}" width="122px" alt="" style="display: block; margin-left: auto; margin-right: auto;"> -->
-                <p class="p-3">&copy; 2021 - 2022 
+                <p class="p-3">&copy; 2022 
                     <a href="{% url 'main' %}">ReferDuck </a>
                     - тегін рефераттар, курстық және дипломдық жұмыстар
                 </p>

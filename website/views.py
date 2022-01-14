@@ -1,7 +1,7 @@
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import MultipleObjectMixin
-from django.db.models import Q
+# from django.db.models import Q
 
 from .models import Paper, Category
 
@@ -27,7 +27,7 @@ class PaperDetailView(DetailView, MultipleObjectMixin):
     slug_field = 'url'
     context_object_name = 'paper'
     template_name = 'website/paper_detail.html'
-    paginate_by = 50
+    paginate_by = 80
     
     def get_context_data(self, **kwargs):
         slug = self.kwargs.get(self.slug_url_kwarg, None)
@@ -43,9 +43,7 @@ class Search(ListView):
     
     def get_queryset(self):
         query = self.request.GET.get('q')
-        object_list = Paper.objects.filter(
-            Q(title__icontains=query) | Q(content__icontains=query)
-        )
+        object_list = Paper.objects.filter(title__icontains=query)
         return object_list
 
     def get_context_data(self, *args, **kwargs):

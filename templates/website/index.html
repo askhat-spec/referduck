@@ -5,24 +5,23 @@
     {% block content %}
         <header class="pt-5">
             <div class="container">
-                <div class="p-4 p-lg-5 rounded-3 text-center">
+                <div class="p-4 rounded-3 text-center">
                     <div class="m-4 m-lg-5">
                         <h1 class="display-6">Қазақ тіліндегі рефераттар, курстық және дипломдық жұмыстар!</h1>
                     </div>
                 </div>
             </div>
         </header>
-        <section class="p-4 p-lg-5">
+        <section class="p-4">
             <div class="container">
                 <div class="header">
                     <div class="d-flex justify-content-center">
                         <h4>Пәндер</h4>
                     </div>
-                    <hr>
                 </div>
-                <div class="row">
+                <div class="row pt-2">
                     {% for category in object_list %}
-                    <div class="pt-1 col-lg-4 col-md-6" align="justify">
+                    <div class="pt-1 col-lg-4 col-md-6">
                         <a href="{{ category.get_absolute_url }}">
                             <h6>{{ category.name }}</h6>
                         </a>

@@ -7,3 +7,5 @@ dump
 local_settings.py
 static
 migrations
+config
+logs
