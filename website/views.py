@@ -2,6 +2,8 @@ from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import MultipleObjectMixin
 # from django.db.models import Q
+from django.contrib.postgres.search import SearchQuery, SearchVector, SearchRank, SearchHeadline
+from django.conf import settings
 
 from .models import Paper, Category
 
@@ -42,8 +44,14 @@ class Search(ListView):
     allow_empty = False
     
     def get_queryset(self):
-        query = self.request.GET.get('q')
-        object_list = Paper.objects.filter(title__icontains=query)
+        q = self.request.GET.get('q')
+        if not settings.DEBUG:
+            vector = SearchVector('title', 'content')
+            query = SearchQuery(q)
+            search_headline = SearchHeadline('content', query)
+            object_list = Paper.objects.annotate(rank=SearchRank(vector, query)).annotate(headline=search_headline).filter(rank__gte=0.001).order_by('-rank')
+        else:
+            object_list = Paper.objects.filter(title__icontains=q)
         return object_list
 
     def get_context_data(self, *args, **kwargs):

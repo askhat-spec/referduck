@@ -5,15 +5,18 @@
 <section class="p-4 p-lg-5">
     <div class="container">
         <h3 class="font-weight-bold pb-4"> 
-            Іздеу нәтижесі:
+            Іздеу нәтижесі: {{ object_list|length }}
         </h3>
-    {% for paper in object_list %}
-        <ul class="list-unstyled">
-            <a href="{{ paper.get_absolute_url }}">
-                <li class="">{{ paper.title }}</li>
-            </a>
+        <ul class="list-group list-group-flush">
+        {% for paper in object_list %}
+                <li class="list-group-item">
+                    <a href="{{ paper.get_absolute_url }}">
+                        <h6>{{ paper.title }}</h6>
+                    </a>
+                    {{ paper.headline|safe }}
+                </li>
+        {% endfor %}
         </ul>
-    {% endfor %}
     </div>
 </section>
 <br/><br/>
