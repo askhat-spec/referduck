@@ -9,3 +9,5 @@ static
 migrations
 config
 logs
+exit
+__pycache__
